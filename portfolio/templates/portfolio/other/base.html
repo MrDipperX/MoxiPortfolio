@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/vendor.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/css/main.css' %}">
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'portfolio/js/modernizr.js' %}"></script>
+
+    <!-- favicons
+    ================================================== -->
+{#    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">#}
+{#    <link rel="icon" href="favicon.ico" type="image/x-icon">#}
+
+</head>
+
+
+<body id="top">
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-jump">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+    {% block header_logo %}
+
+    {% endblock header_logo %}
+
+        <nav class="header-nav">
+
+            <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+
+
+            <div class="header-nav__content">
+                {% block anchors %}
+
+                {% endblock anchors %}
+
+                <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
+
+                <ul class="header-nav__social">
+                    <li>
+                        <a href="https://t.me/Sai_mo"><i class="fab fa-telegram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://inlnk.ru/YAgvDK"><i class="fab fa-whatsapp"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/sai.mo2705/"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fab fa-vk"></i></a>
+                    </li>
+                </ul>
+
+            </div> <!-- end header-nav__content -->
+
+        </nav> <!-- end header-nav -->
+
+        <a class="header-menu-toggle" href="#0">
+            <span class="header-menu-icon"></span>
+        </a>
+
+    </header> <!-- end s-header -->
+    {% block body %}
+
+    {% endblock body %}
+
+     <!-- footer
+    ================================================== -->
+    <footer>
+        <div class="row">
+            <div class="col-full ss-copyright">
+                <span>© Copyright Portfolio 2022</span>
+                <span>Created by <a href="https://t.me/MrDipper">Mr.Dipper</a></span>
+            </div>
+        </div>
+
+        <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">Back to Top</a>
+        </div>
+    </footer>
+
+    <script src="{% static 'portfolio/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'portfolio/js/plugins.js' %}"></script>
+    <script src="{% static 'portfolio/js/main.js' %}"></script>
+
+</body>
+</html>

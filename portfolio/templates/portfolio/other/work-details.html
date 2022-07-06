@@ -1,0 +1,54 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load portfolio_tags %}
+
+{% block anchors %}
+    <ul class="header-nav__list">
+        <li><a class="smoothscroll"  href="{% url 'home' %}#home" title="home">Главная</a></li>
+        <li><a class="smoothscroll"  href="{% url 'home' %}#about" title="about">Обо мне</a></li>
+        <li><a class="smoothscroll"  href="{% url 'home' %}#services" title="services">Услуги</a></li>
+        <li><a class="smoothscroll"  href="{% url 'home' %}#works" title="works">Портфолио</a></li>
+    </ul>
+{% endblock anchors%}
+
+
+{% block body %}
+
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="s-testimonials">
+
+        <div class="row testimonials narrow">
+
+            <div class="col-full testimonials__slider" data-aos="fade-up">
+
+                {% get_photos_from_one_theme theme_slug as photos%}
+                {% for photo in photos %}
+
+
+                <div class="testimonials__slide">
+                    <img src="../../../media/{{photo.file}}"
+                                     srcset="../../../media/{{photo.file}} , ../../../media/{{photo.file}} " alt="">
+
+                </div> <!-- end testimonials__slide -->
+
+                {% endfor %}
+
+
+            </div> <!-- end testimonials__slider -->
+
+        </div> <!-- end testimonials -->
+
+    <div class="row narrow section-intro add-bottom text-center">
+        <div class="col-twelve tab-full">
+            <h1 class="display-1">{{ some_theme.name }}</h1>
+            <p class="lead">{{ some_theme.description }}</p>
+        </div>
+    </div>
+
+    </section> <!-- end s-testimonials -->
+
+
+
+
+{% endblock body %}

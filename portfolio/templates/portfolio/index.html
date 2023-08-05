@@ -1,0 +1,98 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block sidebar %}
+    <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Главная</span></a></li>
+    <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Обо мне</span></a></li>
+    <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Портфолио</span></a></li>
+{% endblock sidebar%}
+
+
+
+{% block body %}
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Саидалимова Мохисарвар</h1>
+      <p>Я <span class="typed" data-typed-items="Промышленный дизайнер, Графический дизайнер, Художник, Керамист"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+    <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Обо мне</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="{% static 'portfolio/images/profile-img.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Графический дизайнер &amp; Художник</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Дата рождения:</strong> <span>27 мая 2000г.</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Телефонный номер:</strong> <span>+998 90 324-46-54</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Город:</strong> <span>Ташкент</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Возраст:</strong> <span>{{ age }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Электронная почта:</strong> <span>email@example.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Фриланс:</strong> <span>Имеется</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Портфолио</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+
+
+        </div>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            {% for theme in themes %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="../../../media/{{ theme.cover }}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="../../../media/{{ theme.cover }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ theme.name }}"><i class="bx bx-search"></i></a>
+                <a href="{{ theme.get_absolute_url }}" title="Детали"><i class="bx bx-info-circle"></i></a>
+              </div>
+            </div>
+          </div>
+            {% endfor %}
+        </div>
+      </div>
+    </section><!-- End Portfolio Section -->
+
+
+
+  </main><!-- End #main -->
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% endblock body %}
